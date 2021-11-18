@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Book Details</title>
+    <style>
+        .detail_text{
+            position: relative;
+            left: 200px;
+            background: whitesmoke;
+        }
+        .comment{
+            position: relative;
+            left: 300;
+        }
+        .username{
+            font-size: smaller;
+        }
+        .secinfo{
+            border-style: solid;
+            width: 400px;
+            border-radius: 10px;
+        }
+        .commentinput{
+            height: 200px;
+            width: 500px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="linkstep">
+            <span><a href="LibraryBookList.html">Back to result list</a></span>
+        </div>
+        <div class="detail_text">
+            
+            <h2>The equations of life : how physics shapes evolution</h2>
+			<img src="book1.jpg" height="200" width="150">
+            <p>Cockell, Charles S. 2018</p>
+            <p>New York, USA</p>
+            <div>Available at Main Library(4th floor)</div>
+            <div>3 total, 2 available</div>
+            <div><span>REQUEST OPTION</span> 
+                <p>Request here if no inventory</p> 
+                <input type="submit" value="Request">
+            </div>
+            <hr/>
+        </div>
+        <div class="detail_text">
+            <p>You may want second-hand book?</p>
+            <p>Someone is selling here</p>
+            <div class="secinfo">
+                <a href="secondBookMarket.html" target="_blank">
+                    <div><img src="image1.jpg" height="70" width="100"></div>
+                    <div>The equations of life : how physics shapes evolution </div>
+                </a>
+            </div>
+            
+        </div>
+        <div class="detail_text">
+            <h2>Reviews</h2>
+            <hr/>
+            <span class="username">Julie</span>
+            <p class="comment">This book makes me understand the evolution of physics, useful!</p>
+            <hr/>
+            <span class="username">Tom</span>
+            <p class="comment">Recommend to those who are interested in biology.</p>
+            <hr/>
+            <input type="text" class="commentinput" placeholder="Wanna say something?">
+            <input type="submit" value="Comment">
+        </div>
+
+        <div class="detail_text">
+            <h2>You may like these books:</h2>
+            <hr/>
+            <img src="bookrec1.jpg" height="200" width="150">
+            <img src="bookrec2.jpg" height="200" width="150">
+            <hr/>
+        </div>
+
+    </body>
+</html>

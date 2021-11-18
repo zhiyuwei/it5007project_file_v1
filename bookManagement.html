@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Book Management</title>
+
+    <style>
+        .keywordInput{
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .linkstep{
+            white-space:normal
+        }
+        .keywordInput input[type=submit]{
+            height: 40px;
+            border-radius: 10px;
+            background: lightcyan;
+        }
+        .keywordInput input[type=text]{
+            height: 40px;
+            border-radius: 5px;
+        }
+        .bookbutton{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .bookbutton button{
+            width: 300px;
+            text-transform: uppercase;
+            border: 2px solid #0e92b3;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition:0.2s;
+        }
+        #addbook{
+            height: 500px;
+            text-align: center;
+            background-image: url(bookmagBrg.jpg);
+        }
+        #addbook input[type=text]{
+            margin: 5px;
+        }
+        
+        #addbook button{
+            margin: 5px;
+        }
+        .textlabel{
+            color: white;
+        }
+        .textinput{
+            margin-top: 100px;
+        }
+    </style>
+
+
+    
+
+  </head>
+
+  <body>
+    
+    <div id="homepage" >
+
+    <center><h1>Book Management</h1></center>
+    
+
+    <div class="linkstep">
+        <span><a href="staff.html">Home</a> > </span>  
+        <span>Book List</span>
+    </div>
+
+    <hr />
+
+    <div class="keywordInput">
+        <input type="text" placeholder="Keywords" size="60">
+        <input type="submit" value="Apply" size="50">
+    </div>
+
+    <hr />
+
+    <div id="bookList">
+        <table align="center" border="1" cellpadding="20" cellspacing="0">
+            <thead>
+                <tr>
+                    <td>Serial No.</td>
+                    <td>Book Name</td>
+                    <td>Author</td>
+                    <td>Publisher</td>
+                    <td>Number</td>
+                </tr>
+            </thead>
+            <tbody id="contain"></tbody>
+        </table>
+    </div>
+    <p><br /><br /></p>
+    <div class="bookbutton">
+    <button type="button" onclick="gotoadd()">Go to Add Book</button>&emsp;&emsp;&emsp;&emsp;
+    <button type="button" onclick="gotoremove()">Go to Remove Book</button>
+    </div>
+    
+        
+    </div>
+
+    <div id="addbook" style="display: none;">
+        
+        <h2 class="textlabel">Add Book</h2>
+        <div class="textinput"></div>
+        <p class="textlabel">Please enter the book's message.</p>
+        <p id="demo"></p>
+        
+        <label for="bookname" class="textlabel">BOOKNAME </label>
+        <input type="text" id="bookname" class="bookname"><br/>
+
+        <label for="author" class="textlabel">AUTHOR</label>
+        <input type="text" id="author" class="author"><br/>
+
+        <label for="publisher" class="textlabel">PUBLISHER</label>
+        <input type="text" id="publisher" class="publisher"><br/>
+
+        <label for="number" class="textlabel">BOOK NUMBER</label>
+        <input type="text" id="number" class="number"><br/>
+        
+        <button type="button" onclick="addbook()">Add Book</button><br/>
+        <button type="button" onclick="gotobookman()">Go to Book Management</button>
+        </div>
+    </div>
+    
+    <div id="removebook" style="display: none;">
+
+        <h2>Remove Book</h2>
+        <p>Please enter the book's name.</p>
+
+        <label for="removeName">Name </label>
+        <input type="text" id="removeName" class="removeName"><br/><br/>
+
+        <button type="button"onclick="removeCustomer()">Remove Customer</button><br/>
+        <button type="button"onclick="gotobookman()">Go to Book Management</button>
+        
+    </div>
+
+    <script> 
+        var datas = [{"serialnumber": 1,"bookname": "The equations of life : how physics shapes evolution","author": "Cockell, Charles S.","publisher": "Basic Books","number":344,},
+                {"serialnumber": 2,"bookname": "Introduction to modern cryptography","author": "Katz Jonathan, and Lindell Yehuda","publisher": "CRC Press","number":200,}
+                ];
+    
+        showtable()
+        
+        function showtable(){
+            var str='';
+            for(i=0;i<datas.length;i++){
+                    str+='<tr>';
+                    str+=`<td>${datas[i].serialnumber}</td>`;
+                    str+=`<td>${datas[i].bookname}</td>`;
+                    str+=`<td>${datas[i].author}</td>`;
+                    str+=`<td>${datas[i].publisher}</td>`;
+                    str+=`<td>${datas[i].number}</td>`;
+                    str+='</tr>';
+                }
+        
+            contain.innerHTML = str;
+        }
+    
+        function gotoadd(){
+            document.getElementById("homepage").style.display="none";
+            document.getElementById("addbook").style.display="block";
+        }
+    
+        function gotoremove(){
+            document.getElementById("homepage").style.display="none";
+            document.getElementById("removebook").style.display="block";
+        }
+        
+        function gotobookman(){
+            document.getElementById("homepage").style.display="block";
+            document.getElementById("addbook").style.display="none";
+            document.getElementById("removebook").style.display="none";
+        }
+        </script>
+    
+
+    
+
+  </body>
+</html>

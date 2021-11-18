@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Loan Management</title>
+
+    <style>
+        .keywordInput{
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .linkstep{
+            white-space:normal
+        }
+        .keywordInput input[type=submit]{
+            height: 40px;
+            border-radius: 10px;
+            background: lightcyan;
+        }
+        .keywordInput input[type=text]{
+            height: 40px;
+            border-radius: 5px;
+        }
+        .loanbutton{
+            display: flex;
+            justify-content: center;
+        }
+        .loanbutton button{
+            width: 300px;
+            text-transform: uppercase;
+            border: 2px solid #0e92b3;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition:0.2s;
+        }
+
+    </style>
+
+
+    
+
+  </head>
+
+  <body>
+    
+    <div id="homepage" >
+
+    <center><h1>Loan/Return Management</h1></center>
+    
+
+    <div class="linkstep">
+        <span><a href="staff.html">Home</a> > </span>  
+        <span>Book List</span>
+    </div>
+
+    <hr />
+
+
+    <div id="bookList">
+        <table align="center" border="1" cellpadding="20" cellspacing="0">
+            <thead>
+                <tr>
+                    <td>Serial No.</td>
+                    <td>Book Name</td>
+                    <td>Reader Name</td>
+                    <td>Loan Date</td>
+                    <td>Return Date</td>
+                </tr>
+            </thead>
+            <tbody id="contain"></tbody>
+        </table>
+    </div>
+    <p><br /><br /></p>
+    
+        
+    </div>
+
+
+    <script> 
+        var datas = [{"serialnumber": 1,"bookname": "The equations of life : how physics shapes evolution","readername": "Alice","loandate": "2019-01-01","returndate":"2019-02-01",},
+                {"serialnumber": 2,"bookname": "Introduction to modern cryptography","readername": "Alice","loandate": "2019-01-05","returndate":"2019-01-11"}
+                ];
+    
+        showtable()
+        
+        function showtable(){
+            var str='';
+            for(i=0;i<datas.length;i++){
+                    str+='<tr>';
+                    str+=`<td>${datas[i].serialnumber}</td>`;
+                    str+=`<td>${datas[i].bookname}</td>`;
+                    str+=`<td>${datas[i].readername}</td>`;
+                    str+=`<td>${datas[i].loandate}</td>`;
+                    str+=`<td>${datas[i].returndate}</td>`;
+                    str+='</tr>';
+                }
+        
+            contain.innerHTML = str;
+        }
+    
+        </script>
+    
+
+    
+
+  </body>
+</html>
